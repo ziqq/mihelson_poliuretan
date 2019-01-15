@@ -1,0 +1,46 @@
+.header {
+    padding: 10px 0 5px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    @include max-screen(480) {
+        padding: 5px 0;
+    }
+
+    &--fixed {
+        box-shadow: 0 5px 10px rgba(#000, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        @include trfY(-100%);
+        transition: transform 1s ease;
+    }
+
+    &.is-fixed {
+        box-shadow: 0 5px 10px rgba(#000, 0.1);
+    }
+
+    &.is-visible {
+        @include trfY(0);
+    }
+} //.header
+
+.logo {
+
+    &__icon {
+        width: 210px;
+        height: 50px;
+        fill: #000;
+
+        @include respond-to(xs) {
+            width: 152px;
+            height: 32px;
+        }
+    }
+} //.logo

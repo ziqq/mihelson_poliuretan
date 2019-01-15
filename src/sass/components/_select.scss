@@ -1,0 +1,113 @@
+.c-select {
+    position: relative;
+    padding: 0;
+
+    &::before {
+        content: '\f107';
+        @include fa('light');
+        font-size: 18px;
+        color: $color-icon;
+        @include vy;
+        right: 10px;
+    }
+
+    @include respond-to(i5) {
+        width: 132px;
+    }
+
+    &__reset {
+        @include respond-to(xs) {
+            width: 30px;
+            padding: 11px 0;
+            @include flexCenter;
+            justify-content: flex-end;
+            @include centre('y');
+            right: -3px;
+            z-index: z(dropdown);
+
+            i {
+                font-size: 18px;
+            }
+        }
+    } //.c-select__reset
+
+    select {
+        @extend %styleInput;
+        padding: 11px 25px 10px 10px;
+        width: 100%;
+        // height: 100%;
+        font-family: $f;
+        font-size: 16px;
+        color: $gray--darkest;
+        appearance: none;
+
+        &:focus {
+            border-color: $color-border--lighten;
+            box-shadow: none;
+        }
+
+        &.has-placeholder {
+            font-family: $f-light-i;
+            color: #999;
+
+            option {
+                font-family: $f;
+                color: $color-text;
+            }
+        }
+    } //.c-select select
+
+    option {
+        padding: 0 10px;
+    } //.c-select option
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        @include flexCenter;
+    } //.c-select__icon
+
+    &__ico {
+        width: 24px;
+        height: 24px;
+        fill: $gray--dark;
+        pointer-events: none;
+    } //.c-select__ico
+
+    &--icon {
+        display: none;
+        max-width: 90px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #fff;
+        position: relative;
+        align-items: center;
+
+        &::before {
+            display: none;
+        }
+
+        .c-select {
+
+            &__icon {
+                @include centre();
+                z-index: z(fixed);
+            }
+        }
+
+        select {
+            max-width: 90px;
+            width: auto;
+            height: 0;
+            padding: 38px 0 0;
+            background-color: transparent;
+            position: relative;
+            z-index: z(fixed) + 1;
+
+            &:hover,
+            &:focus {
+                border-color: $input-color-border--hover;
+            }
+        }
+    } //.c-select--icon
+} //.c-select

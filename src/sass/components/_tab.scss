@@ -1,0 +1,156 @@
+.tab {
+
+    &__inner {
+        padding: $gutter;
+    } //.tab__inner
+
+    &__titles {
+        border-bottom: 1px solid $color-border--lighten;
+        position: relative;
+        @include flexCenter;
+
+        &--scroll {
+            overflow-x: auto;
+        }
+    } //.tab__titles
+
+    &__title {
+        width: 100%;
+        margin: 0 7px -1px;
+        text-align: center;
+        white-space: nowrap;
+        outline: none;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+
+            .tab__link {
+                border-bottom: 2px solid lighten($color-main, 15%);
+            }
+        }
+
+        &.is-active,
+        &.ui-state-active {
+
+            .tab {
+
+                &__link {
+                    border-bottom: 2px solid $color-main;
+                }
+
+                &__icon {
+                    color: $color-main;
+                }
+            }
+        }
+    } //.tab__title
+
+    &__link {
+        display: block;
+        padding: 5px 30px 6px;
+        border-bottom: 2px solid transparent;
+        transition: none;
+        cursor: pointer;
+        outline: none;
+        @include nosel;
+        color: $color-text;
+
+        &:hover {
+            color: $color-text;
+        }
+
+        @include respond-to(xs) {
+            padding: 5px 0 6px;
+        }
+    } //.tab__link
+
+    &__icon {
+        margin-right: 7px;
+        color: $color-icon;
+        font-size: 14px;
+    } //.tab__icon
+
+    &__content {
+        display: none;
+        padding: 15px 30px;
+    } //.tab__content
+
+    &__line {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: $color-main;
+        border-radius: 5px;
+        transition: all 0.5s;
+    } //.tab__line
+
+    &--two {
+
+        .tab {
+
+            &__titles {
+                justify-content: center;
+            }
+
+            &__title {
+                width: auto;
+                margin: 0 0 -1px;
+
+                &:not(.ui-state-active) {
+
+                    &:hover,
+                    &.ui-state-hover {
+
+                        .tab__link {
+                            border-color: #e8e8e8 #e8e8e8 transparent;
+                            background-color: $color-border--lightest;
+                            border-bottom: 1px solid $color-border--lighten;
+
+                            @include respond-to(xs) {
+                                background-color: transparent;
+                                border-color: transparent;
+                            }
+                        }
+                    }
+                }
+
+                &.is-active,
+                &.ui-state-active {
+
+                    .tab__link {
+                        border-color: $color-border--lighten
+                            $color-border--lighten $color-bg--lighten;
+                        border-bottom: 1px solid #fbfbfb;
+                    }
+
+                    .tab__icon {
+                        color: $color-main;
+                    }
+                }
+            }
+
+            &__link {
+                width: auto;
+                font-family: $f-medium;
+                font-size: 15px;
+                border: 1px solid;
+                border-color: transparent;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+
+                @include respond-to(xs) {
+                    padding: 5px 10px;
+                }
+            }
+        }
+    } //.tab--two
+} //.tab

@@ -1,0 +1,92 @@
+//noUiSlider
+
+.noUi-horizontal {
+    height: 2px;
+
+    .noUi-handle {
+        width: 8px;
+        height: 8px;
+        top: -3px;
+        left: -5px;
+        border-radius: 50%;
+        background: $color-main;
+        @include respond-to(xs) {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+.noUi-base,
+.noUi-handle {
+    background-color: $gray--lighten;
+}
+
+.noUi-handle {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    &::after {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba($color-main, 0.5);
+        @include vcenter;
+        @include tr(0.5s);
+        @include respond-to(xs) {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    &::before {
+        display: none;
+    }
+}
+
+.noUi-connect,
+.noUi-target {
+    background: $color-main;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.range {
+    @include clr;
+
+    &__slider {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    } //.range__slider
+
+    &__from,
+    &__to {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 15px;
+        color: $color-text--light;
+
+        span {
+            font-size: 14px;
+            color: $color-text;
+        }
+
+        i {
+            font-size: 13px;
+            color: $gray--light;
+        }
+    } //.range__from
+
+    &__from {
+        float: left;
+    }
+
+    &__to {
+        float: right;
+    } //.range__to
+} //.range

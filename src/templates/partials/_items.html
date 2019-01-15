@@ -1,0 +1,19 @@
+{% import "assets/_mixins.html" as mixin %}
+
+<!--
+<div class="c-dropdown js-c-dropdown">
+	наведи сюда
+	<div class="c-dropdown__list">это появится</div>
+</div>
+-->
+
+{% macro checkbox(title, class) %}
+<label class="c-checkbox {{ class }}">
+	<input type="checkbox">
+	<span class="c-checkbox__box"></span>
+	<span class="c-checkbox__title">{{ title }}</span>
+</label>
+{% endmacro %}
+{#  item.checkbox('мужской', 'c-checkbox--radio, profile-editor__checkbox')  #}
+
+

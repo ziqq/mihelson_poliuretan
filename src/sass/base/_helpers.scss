@@ -1,0 +1,18 @@
+//HELPER CLASSES
+.is-hidden {
+    display: none !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.is-notvisible {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+[onclick] {
+    cursor: pointer;
+}

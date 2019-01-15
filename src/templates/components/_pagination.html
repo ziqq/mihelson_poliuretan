@@ -1,0 +1,15 @@
+<!-- begin pagination -->
+<div class="pagination catalog__pagination">
+	<ul class="pagination__list">
+		<li class="pagination__item"><a href="#" class="pagination__link"><i class="fal fa-angle-left"></i></a></li>
+		<li class="pagination__item is-active"><a href="#" class="pagination__link">1</a></li>
+		{% for i in range(2, 5) %}
+			<li class="pagination__item"><a href="#" class="pagination__link">{{i}}</a></li>
+		 {% endfor %}
+		<li class="pagination__item">
+			<span class="pagination__gap">...</span>
+			<a href="#" class="pagination__link">18</a>
+		</li>
+		<li class="pagination__item"><a href="#" class="pagination__link"><i class="fal fa-angle-right"></i></a></li>
+	</ul>
+</div><!-- end pagination -->

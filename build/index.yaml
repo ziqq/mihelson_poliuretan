@@ -1,0 +1,10 @@
+ProjectTitle: Project Name
+
+PageList:
+- file: home.html
+  ready: 50
+  desc : Главная
+
+- file: popups.html
+  ready: 50
+  desc : Попап окна

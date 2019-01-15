@@ -1,0 +1,190 @@
+$breakpoints: (
+    i5: 320px,
+    i7: 375px,
+    i8: 414px,
+    xs: 480px,
+    sm: 768px,
+    md: 1024px,
+    mdX: 1200px,
+    lg: 1366px
+);
+
+$breakpointsMin: (
+    i5: 319px,
+    i7: 374px,
+    i8: 413px,
+    xs: 479px,
+    sm: 767px,
+    md: 1023px,
+    mdX: 1200px,
+    lg: 1365px
+);
+
+//z-index
+$z-index: (
+    bottom: -9999,
+    down: -1,
+    default: 1,
+    fixed: 10,
+    success: 50,
+    successBtnClose: 51,
+    dropdown: 333,
+    overlay: 999,
+    menu: 1000,
+    modal: 1001
+);
+
+//FONTS
+$f                         : hnc-300, sans-serif;
+$f-medium                  : hnc-500, sans-serif;
+
+$font-size-base            : 16px;
+$font-family-base          : $f;
+$line-height-base          : 1.5;
+$font-weight-base          : 300;
+
+//Отступы
+$base-indent               : 20px;
+$half-indent               : $base-indent / 2;
+$section-indent            : 50px;
+
+$gutter                    : $base-indent;
+
+//Base Variebles
+$color-accent              : #ffd30f;
+$color-main                : #ff8272;
+$color-third               : #fff06b;
+
+$color-muted               : #d6d6d6;
+$color-primary             : #ff8272;
+$color-primary--light      : #ff9280;
+$color-success             : #8cc152;
+$color-success--light      : #79cebb;
+$color-info                : #2b72bd;
+$color-info--light         : #1d8acb;
+$color-danger              : #f33155;
+$color-danger--light       : #f67c93;
+$color-warning             : #ffc107;
+
+//gray
+$gray--darkest             : #242626;
+$gray--darken              : #353737;
+$gray--dark                : #464646;
+$gray                      : #c4c2ce;
+$gray--light               : #9b9b9b;
+$gray--lighten             : #f3f3f3;
+$gray--lightest            : #f9f9f9;
+
+
+//text
+$color-text--darkest       : $gray--darkest;
+$color-text                : #000;
+$color-text--light         : $gray--light;
+$color-text--lighten       : $gray--lighten;
+$color-text--lightest      : $gray--lightest;
+
+//btn
+$color-btn--darken         : #3e3737;
+$color-btn--dark           : #6b6464;
+
+//bg
+$color-bg--accent          : #fff4f0;
+$color-bg--darken          : #191919;
+$color-bg--dark            : #222;
+$color-bg                  : #2f2f2f;
+$color-bg--light           : #eee;
+$color-bg--lighten         : #f5f5f5;
+$color-bg--lightest        : #f7f7f8;
+
+$color-gray--hover         : $color-bg--lightest;
+$color-bg--hover           : $color-gray--hover;
+
+//Icon
+$color-icon-dark           : #727272;
+$color-icon                : #a5a5a5;
+$color-icon--light         : #cacaca;
+
+//border
+$color-border--darkest     : $gray--darkest;
+$color-border--darken      : $gray--darken;
+$color-border--dark        : $gray;
+$color-border              : #a5a5a5;
+$color-border--light       : #c2c2c2;
+$color-border--lighten     : #dedede;
+$color-border--lightest    : #dee3e7;
+
+
+$input-color-border        : #c7c7c7;
+$input-color-border--hover : #b3b3b3;
+$input-shadow--hover       : 0 2px 4px 0 rgba(0,0,0,.05), 0 0 4px 0 rgba(0,0,0,.05);
+
+$border-radius             : 3px;
+
+$color-placeholder         : #999;
+
+//Тень
+$bxs                       : 1px 1px 10px #ddd;
+$bxs-hover                 : 1px 1px 10px rgba($color-main, 0.6);
+$bxs-box                   : 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.1);
+
+//Transition
+$trs                       : all 0.4s ease-in-out;
+
+//button colors
+$button-colors: (
+    accent: $color-accent,
+    dark: #000
+);
+
+$text-colors: (
+    red: red,
+    pink: #fe0061,
+    purple: #ab00b6,
+    blue: #3c4ebc,
+    blue--light: #0096fb,
+    blue--lightest: #00bfd8,
+    green--dark: #009988,
+    green: #00b341,
+    green--light: #c9df00,
+    yellow: #ffec00,
+    orange: #ff9300,
+    accent: $color-main
+);
+
+//Icons
+
+$icon-whatsapp   : '\f232'; //whatsapp
+$icon-viber      : '\f409'; //viber
+$icon-vk         : '\f189'; //vk
+
+$btn-social-icon: (
+    whatsapp   : $icon-whatsapp,
+    viber      : $icon-viber,
+    vk         : $icon-vk
+);
+
+$btn-social-color: (
+    whatsapp   : #23d366,
+    viber      : #7d3daf,
+    vk         : #4a76a8
+);
+
+//Modal Variebles
+$modal-border-width     : 1px;
+$modal-border-color     : #e8e8e8;
+$modal-border-radius    : $border-radius;
+
+$modal-box-shadow       : 0 0.25rem 0.5rem rgba(#000, 0.5) !default;
+
+$modal-backdrop-bg      : #000 !default;
+$modal-content-bg       : #fff !default;
+$modal-backdrop-opacity : 0.4 !default;
+$modal-header-padding   : 15px !default;
+$modal-inner-padding    : 15px !default;
+
+$modal-lg               : 800px !default;
+$modal-md               : 500px !default;
+$modal-sm               : 300px !default;
+
+$transition-collapse    : height 0.35s ease !default;
+$transition-fade        : opacity 0.15s linear !default;

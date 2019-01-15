@@ -1,0 +1,25 @@
+{
+    "editor.formatOnSave": false,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "eslint.autoFixOnSave": true,
+    "css.lint.zeroUnits": "warning",
+    "scss.lint.zeroUnits": "warning",
+	"files.trimTrailingWhitespace": true,
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/elm-stuff": true,
+		"**/jest_0": true,
+		"**/webpack": true
+	},
+	"alignment.indentBase": "activeline",
+	"editor.renderWhitespace": "none",
+	"html.format.wrapLineLength": 0,
+	"html.validate.styles": false,
+
+	"prettier.singleQuote": true,
+    "prettier.stylelintIntegration": true,
+    "window.zoomLevel": 0
+}

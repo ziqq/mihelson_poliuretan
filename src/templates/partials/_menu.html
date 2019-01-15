@@ -1,0 +1,12 @@
+<!-- begin nav -->
+<nav class="nav js-main-nav">
+	<ul class="nav__list">
+		{% import "_data/_data.html" as mainMenu %}
+		{% for item in mainMenu.mainMenu %}
+		<li class="nav__item">
+			<a href="#" class="nav__link">{{ item.title }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</nav>
+<!-- end nav -->

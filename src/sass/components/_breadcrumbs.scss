@@ -1,0 +1,55 @@
+.breadcrumbs {
+    padding: 12px 0 14px;
+
+    @include respond-to(xs) {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+    } //breadcrumbs__list
+
+    &__item {
+        position: relative;
+
+        &::after {
+            content: '\f105';
+            @include fa('light');
+            font-size: 14px;
+            color: #000;
+            position: relative;
+            right: -8px;
+            top: 1px;
+        }
+
+        &:last-child {
+
+            &::after {
+                display: none;
+            }
+
+            .breadcrumbs__title {
+                color: #000;
+            }
+        }
+
+        & + & {
+            margin-left: 20px;
+        }
+    } //breadcrumbs__item
+
+    &__link {
+        display: inline-block;
+        color: $color-main;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    } //breadcrumbs__link
+
+    &__title {
+        font-family: $f-light;
+        font-size: 14px;
+        color: $color-main;
+    } //breadcrumbs__title
+} //breadcrumbs

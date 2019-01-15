@@ -1,0 +1,150 @@
+//Custom Webkit Scroll
+@mixin site-scroll {
+    @include scroll;
+    @include scrollbar {
+        width: 5px;
+    }
+    @include scrollbar-track {
+        width: 5px;
+    }
+    @include scrollbar-thumb {
+        background-color: $gray--light;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin responseWidth {
+    @include respond-to(xs) {
+        max-width: 425px;
+        width: calc(425px - 20px);
+    }
+    @include respond-to(i8) {
+        width: calc(414px - 20px);
+    }
+    @include respond-to(i7) {
+        width: calc(375px - 20px);
+    }
+    @include respond-to(i5) {
+        width: calc(320px - 20px);
+    }
+}
+
+@mixin sectionOverlay($opa: 0.4) {
+    position: relative;
+
+    &::before {
+        display: block;
+        content: '';
+        // background-color: rgba($color-bg, $opa);
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+        // @include tr;
+
+        transition: all 1s ease;
+        @include coverdiv;
+
+    }
+
+    & > * {
+        z-index: z(default);
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+@mixin borderTop {
+    border-top: 1px solid $color-border--lightest;
+
+    &:first-child {
+        border-top: none;
+    }
+}
+
+@mixin listIcon($positionTop: 11px, $color: $color-main) {
+    padding-left: 15px;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        background-color: $gray;
+        position: absolute;
+        top: $positionTop;
+        left: 0;
+    }
+} //ul li &::before (-)
+
+@mixin gutter($g: $gutter) {
+    margin-bottom: $g;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+%img {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+%box {
+    border-radius: $border-radius;
+    background-color: #fff;
+    border: 1px solid $color-border--lightest;
+    box-shadow: 0 2px 5px 0 rgba(164, 173, 186, .25);
+}
+
+%styleInput {
+    height: 40px;
+    padding: 9px 25px 9px 10px;
+    font-size: 16px;
+    line-height: 1;
+    color: $gray--darkest;
+    border-radius: $border-radius;
+    border: 1px solid $input-color-border;
+    background-color: #fff;
+    transition: border 0.3s ease;
+
+    &:hover {
+        border-color: $input-color-border--hover;
+    }
+
+    &:focus {
+        font-size: 16px;
+        border-color: darken($input-color-border--hover, 10%);
+    }
+
+    &:disabled {
+        background-color: $gray--lighten !important;
+        border-color: $gray--lighten !important;
+    }
+
+    @include placeholder {
+        font-family: $f;
+        font-size: 14px;
+        line-height: 23px;
+        color: $gray--light;
+
+        @include respond-to(xs) {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+b,
+strong {
+    font-weight: 600;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+    outline: none;
+    @include tr;
+
+    &:hover {
+        color: lighten($color-accent, 10%);
+    }
+
+    &.is-disable {
+        pointer-events: none;
+    }
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    margin-top: 0;
+}
+
+h1,.h1 {
+    font-family: $f-medium;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include respond-to(xs) {
+        font-size: 22px;
+    }
+}
+
+h2,.h2 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.4em;
+    @include max-screen(1024) {
+        font-size: 32px;
+        line-height: 1.25em;
+    }
+    @include respond-to(sm) {
+        font-size: 26px;
+        line-height: 1.2em;
+    }
+}
+
+h3,.h3 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.25em;
+    @include max-screen(1024) {
+        font-size: 24px;
+    }
+    @include respond-to(sm) {
+        font-size: 22px;
+        line-height: 1.13636364em;
+    }
+}
+
+h4,.h4,h5,.h5,h6,.h6 {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.22222222em;
+    margin-bottom: $half-indent;
+    @include respond-to(sm) {
+        line-height: 1.11111111em;
+    }
+}
+
+input,textarea,select {
+    @extend %styleInput;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 4px 10px;
+    font-size: 14px;
+    line-height: 1.25;
+
+    @include respond-to(xs) {
+        font-size: 16px;
+    }
+
+    &:focus {
+        font-size: 14px;
+    }
+
+    @include placeholder {
+        line-height: 1.25;
+    }
+}
+
+input[type='num'],
+input[type='number'],
+input[type='tel'],
+input[type='time'],
+input[type='date'] {
+    appearance: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+/*disable auto-zoom on iphone input field focus*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @include respond-to(xs) {
+
+        select:focus,
+        textarea:focus,
+        input:focus {
+            font-size: 16px;
+        }
+    }
+}
+
+.text-color {
+    @each $theme, $color in $text-colors {
+
+        &--#{$theme} {
+            color: $color;
+        }
+    }
+
+    &--black {
+        color: #000;
+    }
+} //.text-color

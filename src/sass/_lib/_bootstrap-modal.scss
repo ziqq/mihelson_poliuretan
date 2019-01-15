@@ -1,0 +1,223 @@
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+.fade {
+    opacity: 0;
+    transition: $transition-fade;
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.25s linear;
+
+    &.in {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.collapse {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
+tr {
+
+    &.collapse.show {
+        display: table-row;
+    }
+}
+
+tbody {
+
+    &.collapse.show {
+        display: table-row-group;
+    }
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: $transition-collapse;
+}
+
+// Kill the scroll on the body
+
+.modal-open {
+    overflow: hidden;
+}
+
+// Container that the modal scrolls within
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z(modal);
+    display: none;
+    overflow: hidden;
+    @include nosel;
+    outline: 0;
+
+    .modal-open & {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.modal-dialog {
+    width: auto;
+    margin: $base-indent;
+    pointer-events: none;
+    position: relative;
+
+    .modal.fade & {
+        transition: transform 0.3s ease-out;
+        transform: translate(0, -25%);
+    }
+
+    .modal.show & {
+        transform: translate(0, 0);
+    }
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - (#{$base-indent} * 2));
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    background-color: $modal-content-bg;
+    border-radius: $modal-border-radius;
+    box-shadow: $modal-box-shadow;
+    outline: 0;
+}
+
+// Modal background
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z(overlay);
+    background-color: $modal-backdrop-bg;
+
+    // Fade for backdrop
+
+    &.fade {
+        opacity: 0;
+    }
+
+    &.show {
+        opacity: $modal-backdrop-opacity;
+    }
+}
+
+// Modal header
+
+.modal-header {
+    padding: $modal-header-padding;
+    border-bottom: $modal-border-width solid $modal-border-color;
+    border-top-left-radius: $modal-border-radius;
+    border-top-right-radius: $modal-border-radius;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+// Title text within header
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: $line-height-base;
+}
+
+// Modal body
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+// Footer
+
+.modal-footer {
+    padding: $modal-inner-padding;
+    border-top: $modal-border-width solid $modal-border-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    // Easily place margin between footer elements
+
+    > :not(:first-child) {
+        margin-left: 0.25rem;
+    }
+
+    > :not(:last-child) {
+        margin-right: 0.25rem;
+    }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+// Scale up the modal
+@include respond-to(sm) {
+
+    .modal-dialog {
+        max-width: $modal-md;
+        margin: $base-indent 10px;
+    }
+
+    .modal-dialog-centered {
+        min-height: calc(100% - (#{$base-indent} * 2));
+    }
+
+    .modal-content {
+        box-shadow: $modal-box-shadow;
+    }
+
+    .modal-sm {
+        max-width: $modal-sm;
+    }
+}
+
+@include respond-to(lg) {
+
+    .modal-lg {
+        max-width: $modal-lg;
+    }
+}

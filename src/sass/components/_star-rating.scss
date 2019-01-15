@@ -1,0 +1,131 @@
+.rating {
+    width: 90px;
+    height: 13px;
+    margin-right: 35px;
+    @include sprite(rating--gray);
+    position: relative;
+    float: left;
+
+    &__wrap {
+        @include flexCenter;
+        position: relative;
+
+        &_col {
+            flex-direction: column;
+
+            .rating {
+
+                &__reviews {
+                    margin-top: 5px;
+                }
+            }
+        }
+    } //.rating__wrap
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        @include sprite(rating);
+    } //.rating__inner
+
+    &__data {
+        @include flexCenter;
+        justify-content: center;
+
+        strong {
+            margin-right: 7px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 1;
+            color: #000;
+        }
+
+        span {
+            font-size: 18px;
+            color: $gray--lighten;
+        }
+    } //.rating__data
+
+    &__reviews {
+        display: block;
+        font-family: roboto-300, sans-serif;
+        font-style: italic;
+        font-size: 13px;
+        color: #000;
+    } //.rating__reviews
+
+    &__rev-count {
+        font-size: 12px;
+        line-height: 1;
+        color: #000;
+        position: absolute;
+        top: -1px;
+        right: -30px;
+    } //.rating__rev-count
+
+    &--big {
+        width: 130px;
+        height: 25px;
+        margin: auto;
+        @include sprite(rating_big--gray);
+        @include respond-to(sm) {
+            width: 90px;
+            height: 13px;
+            @include sprite(rating--gray);
+        }
+
+        .rating {
+
+            &__inner {
+                @include sprite(rating_big);
+                @include respond-to(sm) {
+                    @include sprite(rating);
+                }
+            }
+        }
+    }
+
+    &__meter {
+        margin-left: 85px;
+    } //.rating__meter
+} //.rating
+
+.star-rating {
+    font-size: 0;
+
+    &__wrap {
+        display: inline-block;
+        font-size: 20px;
+
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }//.star-rating__wrap
+
+    &__ico {
+        float: right;
+        padding-left: 2px;
+        cursor: pointer;
+        color: #ffb300;
+
+        &:last-child {
+            padding-left: 0;
+        }
+    }//.star-rating__ico
+
+    &__input {
+        display: none;
+    }//.star-rating__input
+}//.star-rating
+
+.star-rating__ico:hover::before,
+.star-rating__ico:hover ~ .star-rating__ico::before,
+.star-rating__input:checked ~ .star-rating__ico::before {
+    content: '\f005';
+    @include fa('solid');
+}

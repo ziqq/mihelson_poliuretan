@@ -1,0 +1,86 @@
+//border-radius
+@mixin br($radius) {
+    border-radius: $radius;
+}
+
+//transform rotate
+@mixin rotate($var) {
+    transform: rotate($var + deg);
+}
+
+//transform scale
+@mixin scale($var) {
+    transform: scale($var);
+}
+
+@mixin blur($var) {
+    filter: blur($var);
+}
+
+@mixin smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin smooth-font {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin gpu {
+    transform: translate3d(0, 0, 0);
+}
+
+@mixin tY($var) {
+    transform: translateY($var);
+}
+
+@mixin tX($var) {
+    transform: translateX($var);
+}
+
+//Clearfix
+@mixin clr {
+
+    &:after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin centre($axis: 'both') {
+    position: absolute;
+    @if $axis == 'y' {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if $axis == 'x' {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $axis == 'both' {
+        top: 50%;
+        left: 50%;
+        transform: translate(-51%, -50%);
+    }
+}
+
+//Font Awesome
+@mixin fa($family: 'regular') {
+    @if $family == 'light' {
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 300;
+    }
+    @if $family == 'regular' {
+        font-family: 'Font Awesome 5 Pro';
+    }
+    @if $family == 'solid' {
+        font-family: 'Font Awesome 5 Pro';
+        font-style: normal;
+        font-weight: 900;
+    }
+    @if $family == 'brand' {
+        font-family: 'Font Awesome 5 Brands';
+        font-weight: 300;
+    }
+}
